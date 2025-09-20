@@ -1,0 +1,212 @@
+/* =========================================================
+   PCG - CART (enxuto, sem frete e sem payopt clicável)
+   ========================================================= */
+
+/* -------------------------
+   CONTAINER & GRID
+   ------------------------- */
+body.woocommerce-cart main.site-main{
+  max-width:1400px; margin:0 auto; padding:20px;
+  background:#fff; border-radius:5px;
+}
+body.woocommerce-cart .entry-content > .woocommerce{ max-width:100%; }
+
+body.woocommerce-cart .woocommerce{
+  display:grid; grid-template-columns:minmax(0,1fr) 360px; gap:24px; align-items:start;
+}
+body.woocommerce-cart .woocommerce-cart-form{ grid-column:1; min-width:0; }
+body.woocommerce-cart .cart-collaterals{ grid-column:2; display:block; }
+
+body.woocommerce-cart .cart_totals{ position:sticky; top:96px; }
+
+@media (max-width:992px){
+  body.woocommerce-cart .woocommerce{ display:block; }
+  body.woocommerce-cart .cart_totals{ position:static; }
+}
+
+/* Mensagem inline do controle de quantidade */
+.pcg-qty__msg {
+    margin-top: 6px;
+    /* padding: 6px 10px; */
+    background: #e63535;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 12px;
+    /* line-height: 1.3; */
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+/* -------------------------
+   TABELA DO CARRINHO
+   ------------------------- */
+body.woocommerce-cart .woocommerce-cart-form,
+body.woocommerce-cart .woocommerce-cart-form .shop_table{ width:100%; }
+
+body.woocommerce-cart table.shop_table thead th{
+  font-weight:700; color:#1f2937; border-bottom:2px solid #e5e7eb;
+  padding:12px 10px; font-size:14px;
+}
+body.woocommerce-cart table.shop_table td{
+  padding:12px 10px; vertical-align:top; border-top:1px solid #f1f3f5; font-size:14px;
+}
+
+body.woocommerce-cart td.product-thumbnail img{
+  width:105px; height:auto; border-radius:6px;
+}
+
+body.woocommerce-cart .pcg-item-title{
+  font-weight:600; color:#111827; text-decoration:none;
+}
+body.woocommerce-cart .pcg-item-title:hover{ text-decoration:underline; }
+
+body.woocommerce-cart .pcg-item-lines{ margin-top:6px; }
+body.woocommerce-cart .pcg-item-line{ display:block; font-size:12px; line-height:1.2; font-weight:500; }
+body.woocommerce-cart .pcg-item-line strong{ font-weight:700; }
+body.woocommerce-cart .pcg-item-line.pcg-pix{ color:#0a7f4f; }
+body.woocommerce-cart .pcg-item-line.pcg-card{ color:#374151; }
+
+/* Link remover */
+body.woocommerce-cart a.remove {
+    display: flex;
+    align-items: center;
+    /* gap: 6px; */
+    color: #ef4444;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-top: 10px;
+    justify-content: center;
+}
+body.woocommerce-cart a.remove .material-symbols-outlined{ font-size:16px; color:red; }
+body.woocommerce-cart a.remove:hover{ background:#fee2e2; color:#991b1b; }
+
+/* Subtotais empilhados (PIX / parcelado) */
+body.woocommerce-cart .pcg-price-stack{ display:flex; flex-direction:column; gap:4px; }
+body.woocommerce-cart .pcg-price strong{ display:block; font-size:16px; line-height:1; }
+body.woocommerce-cart .pcg-price small{ display:block; font-size:10px; opacity:.85; }
+body.woocommerce-cart .pcg-price--pix strong{ color:#0a7f4f; }
+
+/* -------------------------
+   QUANTIDADE +/−
+   ------------------------- */
+body.woocommerce-cart button[name="update_cart"]{ display:none; } /* ocultar botão nativo */
+
+.pcg-qty{
+  display:inline-flex; align-items:center; overflow:hidden;
+  border:1px solid #e5e7eb; border-radius:8px; background:#fff;
+}
+.pcg-qty input.qty{
+  width:60px; height:36px; border:0; text-align:center; outline:none;
+  -moz-appearance:textfield;
+}
+.pcg-qty input.qty::-webkit-outer-spin-button,
+.pcg-qty input.qty::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+.pcg-qty__btn{
+  width:36px; height:36px; border:0; background:#f3f4f6; cursor:pointer;
+  font-weight:700; line-height:1;
+}
+.pcg-qty__btn.minus{ border-right:1px solid #e5e7eb; }
+.pcg-qty__btn.plus{  border-left:1px solid #e5e7eb; }
+.pcg-qty__btn:active{ transform:translateY(1px); }
+
+.pcg-qty-hint{
+  display:flex; background:#ef4444; color:#fff; font-size:12px; font-weight:700;
+  align-items:center; justify-content:center; border-radius:10px; margin-top:5px; padding:2px 6px;
+}
+
+/* -------------------------
+   CARD DE TOTAIS (direita)
+   ------------------------- */
+.pcg-cart-totals{
+  background:#fff; border:1px solid #e5e7eb; border-radius:14px;
+  padding:16px; box-shadow:0 8px 24px rgba(0,0,0,.06);
+}
+.pcg-cart-totals .pcg-ct-title{
+  font-weight:800; font-size:18px; margin:0 0 12px;
+}
+.pcg-summary-row{
+  display:flex; justify-content:space-between; align-items:flex-start;
+  padding:10px 0; border-bottom:1px dashed #e5e7eb;
+}
+.pcg-summary-row:last-child{ border-bottom:0; }
+.pcg-summary-row .pcg-label{ color:#374151;
+font-size:14px}
+
+.pcg-amount-sub{font-size: 9px;  
+	display: inline;          /* se alguma regra antiga colocou block */
+  white-space: nowrap;}
+.pcg-label > span { display:block; }
+
+.pcg-summary-row .pcg-amount {
+    font-weight: 800;
+    color: #111827;
+    display: flex;
+    /* justify-content: flex-end; */
+    /* align-content: flex-end; */
+    flex-direction: column;
+    align-items: flex-end;
+    min-width: 90px;
+}
+}
+
+.pcg-badge{
+  margin-left:6px; font-size:11px; font-weight:700; padding:2px 8px;
+  border-radius:999px; background:#eef2ff; color:#4f46e5;
+}
+
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button{
+  display:block; width:100%; border-radius:12px; padding:12px 16px; font-weight:700; margin-top:12px;
+}
+.pcg-label{
+  display:inline-flex;          /* badge fica ao lado do título */
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;               /* permite a “sub” ir para a linha de baixo */
+  line-height:1.2;
+}
+.pcg-label-sub{
+  flex-basis:100%;              /* quebra de linha abaixo do título+badge */
+  font-size:12px;
+  opacity:.75;
+}
+.pcg-badge{
+  display:inline-block;         /* garante lado a lado */
+  padding:2px 6px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:700;
+  background:#e6fffb;
+  color:#059669;
+  border:1px solid #a7f3d0;
+}
+
+/* -------------------------
+   RESPONSIVO
+   ------------------------- */
+@media (max-width:640px){
+  body.woocommerce-cart table.shop_table thead{ display:none; }
+  body.woocommerce-cart table.shop_table td{ padding:6px; }
+  body.woocommerce-cart td.product-thumbnail img{ width:56px; }
+}
+
+.pcg-row-frete .pcg-amount { display:flex; justify-content:flex-end; }
+.pcg-row-frete .button { padding:6px 12px; border-radius:10px; font-weight:700; }
+
+/* ===== Modal de Frete (overlay) ===== */
+.pcg-modal{ position:fixed; inset:0; display:none; z-index:9999; }
+.pcg-modal[aria-hidden="false"]{ display:block; }
+.pcg-modal__backdrop{ position:absolute; inset:0; background:rgba(0,0,0,.45); }
+.pcg-modal__card{
+  position:relative; background:#fff; border-radius:12px; padding:16px;
+  max-width:560px; width:calc(100% - 32px); margin:8vh auto; box-shadow:0 12px 36px rgba(0,0,0,.18);
+}
+.pcg-modal__close{ position:absolute; top:8px; right:10px; border:0; background:transparent; font-size:22px; cursor:pointer; }
+.pcg-frete-form{ display:flex; gap:8px; align-items:center; margin-bottom:12px; }
+.pcg-frete-form input[type=text]{ height:38px; border-radius:10px; max-width:160px; }
+.pcg-frete-table{ width:100%; border-collapse:separate; border-spacing:0; }
+.pcg-frete-table th, .pcg-frete-table td{ padding:8px; border-bottom:1px solid #e5e7eb; font-size:14px; }
+.pcg-frete-row{ cursor:pointer; }
+.pcg-frete-row input{ margin-right:8px; transform:translateY(2px); }
+.pcg-frete-actions{ display:flex; justify-content:flex-end; gap:8px; margin-top:12px; }

@@ -1,0 +1,1238 @@
+/*===========================================
+  PRODUCT PAGE - Layout e Estilo Personalizado
+  Tema: pcgamer
+===========================================*/
+
+/* Container principal */
+.single-product-grid {
+  margin-top: 10px;
+}
+
+/* Título e código */
+.product-title {
+    font-size: 24px;
+}
+
+.product-code {
+  font-size: 14px;
+  color: #888;
+}
+/* =========================================================
+   PRODUCT GRID — proporção 55% (galeria) / 45% (descrição)
+   ========================================================= */
+.product-grid{
+  display: grid;
+  grid-template-columns: 11fr 9fr; /* ~55% | 45% */
+gap: 20px;
+  align-items: start;
+}
+
+/* Permite as colunas encolherem sem “estourar” o grid */
+.product-gallery,
+.produto-descricao{
+  min-width: 0;
+  /* zera qualquer largura fixa herdada que quebre o grid */
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+/* Mobile: empilha as colunas */
+@media (max-width: 767px){
+  .product-grid{ grid-template-columns: 1fr; }
+}
+
+
+/* Marca */
+.product-brand-logo img {
+  height: 40px;
+  object-fit: contain;
+}
+
+/* Destaque parcelamento */
+.product-price-box {
+  background: #222;
+  padding: 20px;
+  border-radius: 6px;
+  color: #fff;
+	display:flex;
+}
+
+.product-price-box h3 {
+  margin: 0 0 10px;
+  color: #00B3F5;
+}
+
+.button-whatsapp {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.page-container .material-symbols-outlined {
+    font-variation-settings: 'FILL' 1;
+    font-size: 24px;
+    color: #00B3F5;
+    margin-right: 5px;
+}
+
+/* Endereço */
+.product-location {
+  background: #eee;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+
+/* Frete e botão de compra */
+.product-shipping {
+  margin-top: 20px;
+}
+
+/* AVALIACOES */
+
+.jgm-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jgm-popup-content {
+  background: #fff;
+  padding: 30px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border-radius: 8px;
+}
+
+.jgm-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.avaliacoes-resumo{
+  cursor: pointer;
+}
+
+.jdgm-star {
+  color: #FFD700 !important;       /* amarelo ouro */
+  fill: #FFD700 !important;
+}
+
+.jdgm-row-actions,
+.jdgm-rev__prod-info-wrapper, 
+.jdgm-widget-actions-wrapper {
+display: none !important;
+}
+
+.jdgm-rev__header {
+margin-bottom: 0;
+	display: flex;
+	flex-direction: column;
+}
+.jdgm-rev__icon {
+    display: flex;
+}
+
+
+.jdgm-row-stars {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly!important;
+  position: relative;
+  gap: 20px;
+  padding: 10px 0;
+	padding-bottom:0;
+}
+
+
+.jdgm-row-stars::before,
+.jdgm-row-stars::after {
+  content: "";
+  display: inline-block;
+  width: 140px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* Logo Google à esquerda */
+.jdgm-row-stars::before {
+  background-image: url('https://static.elfsight.com/icons/app-all-in-one-reviews-logos-google-logo-multicolor.svg');
+}
+
+/* Logo da loja à direita */
+.jdgm-row-stars::after {
+  background-image: url('https://pink-barracuda-283775.hostingersite.com/wp-content/uploads/2025/07/LOGOTIPO-PC-GAMER-BRASILIA-RETANGULAR-2000X500-CENTRALIZADO.png'); /* coloque a URL da sua logo */
+}
+.jdgm-all-reviews__summary.jdgm-rev-widg__summary {
+  flex: 0 1 auto;
+  text-align: center;
+}
+.jdgm-rev-widg__summary-inner {
+    display: inline-block;
+    text-align: center;
+}
+.jdgm-rev .jdgm-rev__icon {
+    display: none !important;
+}
+.jgm-popup-close {
+	    position: absolute;
+    top: 50px;
+    right: 5px;
+    z-index: 2;
+}
+.jdgm-subtab__name {
+
+    text-decoration: auto;
+}
+.jdgm-quest, .jdgm-rev {
+    margin: 0;
+    padding: 5px;
+}
+.jdgm-rev__timestamp {
+    float: right;
+    display: flex;
+}
+/* Logo da marca */
+
+
+.marca-produto {
+    display: flex;
+    align-items: center;
+    max-width: 140px;
+}
+.store-review-badge{
+    display: flex;
+    align-items: center;
+	  cursor: pointer;
+
+}
+
+.logo-marca {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* produto descricao */
+.produto-descricao {
+    gap: 10px;
+    /* min-width: 0; */
+    display: flex;
+    /* padding-left: 0; */
+    flex-wrap: wrap;
+}
+
+.produto-descricao-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.product-price,
+.product-benefits,
+.box-frete {
+	width:100%;
+
+}
+.box-frete {
+    margin-top: 20px;
+}
+
+}
+
+.Botoes-produto {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+
+
+.botao-icone {
+  background: none;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.botao-icone:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.botao-icone .material-symbols-outlined {
+  font-size: 30px;
+}
+
+.botoes-comprar .material-symbols-outlined {
+  color: #ffffff;
+}
+
+/* comportamento botao favorito */
+.favoritar-produto-btn .material-symbols-outlined {
+  font-variation-settings: 'FILL' 0; /* padrão: ícone vazio */
+  transition: font-variation-settings 0.3s, color 0.3s;
+  color: #00B3F5;
+}
+
+.favoritar-produto-btn.favoritado .material-symbols-outlined {
+  font-variation-settings: 'FILL' 1; /* ícone preenchido */
+  color: #00B3F5; /* vermelho ou cor personalizada */
+}
+
+/* codigo sku */
+.sku-produto {
+  font-size: 14px;
+  margin-top: -5px;
+
+}
+
+/* descricao produto top 2 */
+.info-bloco {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #f8f8f8;
+  padding: 4px;
+  border-radius: 6px;
+  color: #333;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.info-bloco .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.info-bloco.disponivel {
+  background-color: #d0f3d5; /* fundo verde suave */
+  color: #1b5e20;            /* texto e ícone em verde escuro */
+}
+
+.info-bloco.disponivel .material-symbols-outlined {
+  color: #1b5e20;   /* mesma cor do texto */
+  font-size: 20px;
+}
+
+.info-bloco.indisponivel {
+  background-color: #ffebee; /* fundo verde suave */
+  color: #c62828;            /* texto e ícone em verde escuro */
+  font-weight: 600;
+  box-shadow: 0 0 8px rgba(46, 125, 50, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.info-bloco.indisponivel .material-symbols-outlined {
+  color: #c62828;   /* mesma cor do texto */
+  font-size: 20px;
+}
+
+
+.info-bloco.novo,
+.info-bloco.garantia {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+.check-stock {
+  display: inline-block;
+  margin-top: 6px;
+  color: #00B3F5;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.check-stock:hover {
+  text-decoration: underline;
+}
+
+.botao-reservar {
+    background-color: #00B3F5;
+    font-size: 12px;
+    border-radius: 15px;
+    color: white;
+}
+.retirada-imediata {
+    display: flex;
+    justify-content: center;
+}
+.retirada-imediata .material-symbols-outlined{
+  color: white;
+	font-size: 15px;
+}
+
+
+
+/* secao pix e botoes */
+.product-preco-botoes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px;
+    justify-content: space-between;
+}
+@keyframes rainbow-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.rainbow-button {
+    background-image: linear-gradient(270deg,
+      #007bff, #3399ff, #66ccff, #99ccff, #99ffcc,
+      #ccff99, #ffcc66, #ff9966, #ff6699, #cc66ff, #007bff);
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 20px;
+    background-size: 300% 300%;
+    animation: rainbow-animation 6s ease-in-out infinite;
+    cursor: pointer;
+    outline: none;
+    text-shadow: 1px 1px 0 #4F4F4F;
+    transition: transform 0.2s ease;
+	width: 160px;
+	position: relative
+}
+
+.button-buy {
+  display: inline-block;
+  background: #00B3F5;
+  color: #fff;
+  padding: 10px 30px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.product-price-pix {
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.botao-carrinho {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.quantidade-personalizada {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 42px;
+}
+
+
+
+.add-to-cart-button,
+.retirar-rapido-button {
+  background: #00B3F5;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.add-to-cart-button:hover,
+.retirar-rapido-button:hover {
+  background: #007bff;
+}
+
+.botoes-comprar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    margin-top: 15px;
+	margin-bottom: 15px;
+	max-width: 300px;
+}
+
+.botoes-comprar form {
+  display: flex;
+  align-items: center;
+
+}
+
+.woocommerce div.product form.cart {
+    margin-bottom: 10px;
+}
+
+.botoes-comprar button {
+    background: #00B3F5;
+    color: white;
+    padding: 10px 5px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    min-width: 230px;
+}
+
+.botoes-comprar button:hover {
+  background: #0077cc;
+}
+
+
+.frete-cep button {
+    max-width: 130px;
+}
+
+/* botao carrinho */
+
+
+input.qty {
+  width: 60px;
+  padding: 6px;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* MENSAGEM CENTRALIZADA */
+.custom-cart-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  min-width: 320px;
+  max-width: 90%;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.custom-cart-message.success {
+  background-color: #28a745;
+}
+
+.custom-cart-message.error {
+  background-color: #dc3545;
+}
+
+
+
+/* === POPUP FRETE: estilo unificado com popup-horario === */
+/* === POPUP FRETE (alinhado ao centro, mesmo padrão do popup-horario) === */
+.frete-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+}
+
+.frete-popup-conteudo {
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: fadeInScale 0.3s ease-in-out;
+  position: relative;
+}
+
+.frete-popup-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Tabela */
+.frete-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.frete-tabela th,
+.frete-tabela td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.frete-tabela th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+#pcgamer-frete-form {
+    background: #e6f4ff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    display: flex;
+    gap: 12px;
+    /* margin-bottom: 24px; */
+    /* font-weight: bold; */
+}
+
+#pcgamer-frete-form .frete-label {
+    flex-basis: 100%;
+    font-size: 14px;
+    color: #004c74;
+    align-self: center;
+}
+
+#pcgamer-frete-form input[type="text"] {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 140px; /* CEP tem até 9 caracteres, isso dá o tamanho ideal */
+  font-weight: bold;
+	  color: #000;
+	  background: #ffffff; /* fundo branco */
+
+
+}
+
+#pcgamer-frete-form button {
+  background: #00B3F5;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#pcgamer-frete-form button:hover {
+  background: #009ed6;
+}
+
+
+/* Informações extras */
+.frete-infos,
+.frete-imposto {
+  font-size: 14px;
+  color: #444;
+  text-align: left;
+}
+
+.frete-infos p {
+  margin-bottom: 10px;
+}
+
+/* === Produto: Localização === */
+.produto-localizacao {
+    display: flex;
+    gap: 10px;
+    /* max-height: 200px; */
+    /* height: 100%; */
+    background: #f9f9f9;
+    border-radius: 12px;
+    /* overflow: hidden; */
+    width: 100%;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    justify-content: space-around;
+}
+
+
+
+
+
+/* Coluna de texto */
+.produto-localizacao-texto {
+    /* flex: 1 1 auto; */
+    display: flex;
+    flex-direction: column;
+    min-width: 185px;
+    /* overflow: hidden; */
+    /* flex-wrap: wrap; */
+}
+
+/* Coluna de botões */
+.produto-estoque-reserva {
+    /* flex: 0 0 auto; */
+    display: flex;
+    /* max-height: 100%; */
+    gap: 10px;
+    /* width: 100%; */
+    margin-top: -10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.info-estoque {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================================
+   GALERIA WOO — Flexslider no modo padrão (floats)
+   - NÃO sobrescrever width em wrapper/slides (JS controla)
+   - Viewport quadrado (ajuste o aspect-ratio se quiser)
+   ========================================================= */
+
+/* Contêiner base da galeria */
+.product-gallery .woocommerce-product-gallery{
+  position: relative !important;   /* necessário p/ posicionar o trigger */
+  max-width: 100% !important;      /* nunca maior que a coluna 55% */
+  opacity: 1 !important;           /* Woo às vezes inicia 0 */
+  box-sizing: border-box;
+}
+
+/* Viewport (janela visível) — altura proporcional à largura
+   Altere 1/1 para 4/3, 3/4, etc. se quiser outro formato */
+.product-gallery .flex-viewport{
+  position: relative !important;
+  overflow: hidden !important;     /* esconde o que passar */
+  width: 100% !important;
+  /* aspect-ratio: 1 / 1 !important;   QUADRADO — ajuste aqui */
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin-bottom: 20px;
+  cursor: zoom-in;                  /* feedback de zoom */
+}
+
+/* Wrapper dos slides — deixa o Flexslider mandar no width total (ex.: 1000%) */
+.product-gallery .woocommerce-product-gallery__wrapper{
+  display: block !important;
+}
+.product-gallery .woocommerce-product-gallery__wrapper::after{
+  content:"";
+  display:block;
+  clear: both;                      /* segura os floats dos slides */
+}
+
+/* Slide individual — lado a lado pelo float
+   (NÃO definir width: o JS injeta inline em px) */
+.product-gallery .woocommerce-product-gallery__image{
+  float: left !important;
+  /* width: (intencionalmente não definido) */
+  height: 100% !important;          /* casa com o viewport */
+  margin: 0 !important;
+
+  /* centraliza a imagem no slide */
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box;
+}
+
+/* Imagem principal — adapta ao quadrado sem distorcer
+   Troque 'contain' por 'cover' se quiser preencher cortando */
+.product-gallery .woocommerce-product-gallery__image img{
+  display: block !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  transition: transform .25s ease;  /* zoom suave no hover (desktop) */
+  transform-origin: center center;
+}
+@media (hover:hover){
+  .product-gallery .flex-viewport:hover .woocommerce-product-gallery__image img{
+    transform: scale(1.12);
+  }
+}
+
+/* =========================================================
+   LUPA / LIGHTBOX — clique apenas na imagem principal
+   (usa o trigger nativo do Woo, invisível e limitado ao viewport)
+   ========================================================= */
+
+/* Altura aproximada da “barra de thumbs”: 64px + ~16px de respiro
+   Ajuste fino se suas thumbs tiverem outro tamanho */
+.product-gallery .woocommerce-product-gallery{ --thumbs-bar: 80px; }
+
+/* Trigger do Woo invisível, cobrindo só a IMAGEM (não as thumbs) */
+.product-gallery .woocommerce-product-gallery__trigger{
+  position: absolute !important;
+  top: 0; left: 0; right: 0;
+  bottom: var(--thumbs-bar);        /* deixa livre a faixa das thumbs */
+  opacity: 0 !important;            /* invisível mas clicável */
+  z-index: 5 !important;            /* acima da imagem, abaixo das thumbs */
+  cursor: zoom-in !important;
+  display: block !important;
+}
+/* Evita que algum ícone interno apareça */
+.product-gallery .woocommerce-product-gallery__trigger > *{ display:none !important; }
+.product-gallery .woocommerce-product-gallery__trigger:focus{ outline: none !important; }
+
+/* As thumbs ficam acima desse overlay invisível */
+.product-gallery .flex-control-thumbs{
+  position: relative;
+  z-index: 10;
+}
+
+/* Mobile: thumbs costumam ficar mais compactas; ajuste a faixa livre */
+@media (max-width: 767px){
+  .product-gallery .woocommerce-product-gallery{ --thumbs-bar: 72px; }
+}
+
+/* =========================================================
+   MINIATURAS (thumbs) — altura travada + acessibilidade
+   ========================================================= */
+.woocommerce div.product div.images .flex-control-thumbs{
+  display: flex !important;
+  gap: 8px !important;
+  justify-content: center;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 6px !important;
+
+  /* remove numeração do <ol> */
+  list-style: none !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+}
+
+/* Cada thumb quadradinha e consistente */
+.woocommerce div.product div.images .flex-control-thumbs li{
+  flex: 0 0 64px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.woocommerce div.product div.images .flex-control-thumbs li::marker{ content: '' !important; }
+
+.woocommerce div.product div.images .flex-control-thumbs img{
+  display: block !important;
+  width: 64px !important;
+  height: 64px !important;        /* altura travada */
+  object-fit: cover !important;   /* preenche o quadrado */
+  border-radius: 6px !important;
+}
+
+/* Destaque ativo/hover/foco teclado */
+.woocommerce div.product div.images .flex-control-thumbs img.flex-active,
+.woocommerce div.product div.images .flex-control-thumbs img:hover{
+  border: 2px solid #00B3F5 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 0 6px rgba(0,179,245,.4) !important;
+}
+.woocommerce div.product div.images .flex-control-thumbs img:focus-visible{
+  outline: 2px solid #00B3F5 !important;
+  outline-offset: 2px !important;
+}
+
+/* =========================================================
+   FORMAS DE PAGAMENTO
+   ========================================================= */
+.caixa-pagamento{border:1px solid #e5e7eb;border-radius:12px;background:#fff;width: 100%}
+.cabecalho-caixa{padding:10px 12px;font-weight:700;border-bottom:1px solid #eef2f7;font-size:14px}
+.lista-pagamento details{border-bottom:1px solid #f2f4f8}
+.lista-pagamento details:last-child{border-bottom:0}
+.linha-pagamento summary{display:flex;align-items:center;gap:8px;cursor:pointer;padding:10px 12px}
+.linha-pagamento .titulo{flex:1 1 auto;font-size:14px;line-height:1.2}
+.linha-pagamento .etiqueta{font-size:11px;color:#0f766e;border:1px solid #99f6e4;background:#ecfeff;padding:2px 6px;border-radius:999px;
+	  display: inline-block;     /* garante bloco compacto */
+  white-space: nowrap;       /* impede quebra de linha */
+  text-align: center;        /* centraliza texto dentro do bloco */}
+.linha-pagamento .preco{font-weight:700;white-space:nowrap}
+.corpo-pagamento{padding:8px 12px}
+.texto-regra{font-size:14px;color:#334155;margin:0 0 6px}
+/* Caixa de parcelas compacta (duas colunas) */
+.caixa-parcelas{background:#0f172a;color:#e2e8f0;border-radius:10px;padding:8px 10px}
+.titulo-parcelas{font-weight:700;margin:0 0 6px;font-size:13px}
+.grid-parcelas{  display:grid;  grid-template-columns:repeat(2,minmax(0,1fr));  gap:4px 16px;}
+.item-parcela{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:2px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
+.item-parcela:last-child{border-bottom:0}
+.item-parcela strong{color:#000}
+.nota-rodape{font-size:11px;opacity:.85;margin-top:6px}
+@media (max-width:520px){  .grid-parcelas{grid-template-columns:1fr}  .corpo-pagamento{padding-left:40px}}
+/* =========================================================
+   QUANTIDADE
+   ========================================================= */
+/* Wrapper no estilo da sua referência */
+.quantidade-wrapper {
+  padding-right: 10px;
+}
+.qty-btn {
+  background: #00B3F5;
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 100%;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  background: #007bff;
+}
+
+.qty-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.qty {
+  width: 50px;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  height: 100%;
+}
+
+.icone--whatsapp img {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.woocommerce-breadcrumb {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+.woocommerce-breadcrumb a {
+  text-decoration: none;
+  color: inherit;              /* herda cor do breadcrumb */
+  transition: color .2s ease;
+
+}
+/* mantém efeito no hover */
+.woocommerce-breadcrumb a:hover {
+  color: #0ea5e9;              /* cor de destaque no hover */
+}
+/* =========================================================
+   TEXTO NO MAPA
+   ========================================================= */
+.mapa-link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.produto-localizacao .mapa-link img {
+    /* display: block; */
+    max-width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+/* texto sobreposto e centralizado */
+.mapa-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;       /* não bloqueia o clique */
+  transition: opacity 0.3s ease;
+	
+	  display: inline-block;     /* garante bloco compacto */
+  white-space: nowrap;       /* impede quebra de linha */
+  text-align: center;        /* centraliza texto dentro do bloco */
+}
+
+/* aparece no hover */
+.mapa-link:hover .mapa-overlay {
+  opacity: 1;
+}
+
+/* ===========================
+   BASE POPUP (comum a todos)
+=========================== */
+
+/* Overlay escurecido e centralização */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Container do popup */
+.popup-conteudo {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 400px;   /* padrão para popups simples */
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+/* Título padrão */
+.popup-conteudo h3 {
+  margin-top: 0;
+}
+
+/* Botão fechar (visível por cima de tudo) */
+.popup-conteudo .popup-fechar, .popup-fechar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    /* line-height: 32px; */
+    /* text-align: center; */
+    background: #00b3f5;
+    color: #fff;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    /* opacity: .9; */
+    z-index: 10000;
+    display: flex;
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+}
+.popup-conteudo .popup-fechar:hover,
+.popup-fechar:hover { opacity: 1; }
+
+/* Ações padrão (links empilhados) */
+.popup-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+.popup-acoes a {
+  background: #0073aa;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===========================
+   VARIANTE: POPUP RETIRA RÁPIDO
+   (card + mapa lado a lado)
+=========================== */
+
+.popup-conteudo.popup-retira {
+	  position: relative;
+  /* sobrepõe o padrão para layout largo */
+  padding: 0;
+  max-width: 980px;
+  width: 95%;
+  text-align: left;    /* texto do card à esquerda */
+}
+
+/* Grid principal: card esquerdo + mapa direito */
+.retira-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 0;
+  min-height: 520px;
+}
+
+/* Card esquerdo */
+.retira-card {
+  padding: 18px 16px;
+  border-right: 1px solid #e6e6e6;
+  overflow-y: auto;
+}
+.retira-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f3f7ff;
+  color: #2157ff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+	justify-content:center;
+}
+.retira-badge .estrela { color: #ffb300; }
+
+.retira-loja { display: flex; align-items: center; gap: 12px; margin: 10px 0 6px; }
+.retira-logo { width: 80px; object-fit: contain; }
+.retira-nome { font-size: 18px; line-height: 1.2; margin: 0; }
+.retira-sub { font-size: 13px; color: #666; }
+
+.retira-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size:12px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+.btn-verde { background: #22c55e; color: #fff; }
+.btn-verde:hover { filter: brightness(0.95); }
+.btn-azul-outline { border-color: #2563eb; color: #2563eb; background: #fff; }
+.btn-azul-outline:hover { background: #eff6ff; }
+
+.retira-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.retira-meta small { color: #777; }
+.retira-distancia { margin-left: auto; font-weight: 600; color: #111; }
+
+.retira-end { font-style: normal; color: #333; line-height: 1.4; margin: 10px 0; font-size: 14px;}
+.retira-horarios { color: #222; margin: 6px 0 14px; font-size: 12px;}
+.retira-horarios .sep { color: #bbb; margin: 0 6px; }
+
+.retira-dicas { margin: 14px 0; font-size: 14px;}
+.retira-dicas summary { cursor: pointer; font-weight: 600; }
+.retira-dicas ul { margin-left: -20px; }
+
+.retira-links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; font-size: 14px;}
+.retira-links a { color: #2563eb; text-decoration: none; }
+.retira-links a:hover { text-decoration: underline; }
+
+/* Mapa à direita */
+.retira-mapa { position: relative; min-height: 520px; }
+.retira-mapa iframe,
+.retira-mapa .mapa-link {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 0 12px 12px 0;
+}
+.mapa-link img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.mapa-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: #111;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  opacity: .9;
+}
+.retira-grid .material-symbols-outlined {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+@media (max-width: 900px) {
+  .retira-grid { grid-template-columns: 1fr; min-height: auto; }
+  .retira-card { border-right: 0; border-bottom: 1px solid #e6e6e6; }
+  .retira-mapa { height: 320px; min-height: 320px; }
+  .retira-mapa iframe,
+  .retira-mapa .mapa-link {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 12px 12px;
+  }
+}

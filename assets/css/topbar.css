@@ -1,0 +1,155 @@
+.header-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: #fff;
+  font-size: 14px;
+  padding: 5px 15px;
+  border-bottom: 1px solid #222;
+  overflow: hidden;
+  height: 40px; /* altura fixa para manter tudo alinhado */
+}
+
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 20px;
+}
+
+.topbar-text {
+  position: relative;
+  height: 30px; /* ajuste se necessário */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+#topbar-phrase {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  font-family: 'Teko', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #E1F5F6;
+  text-transform: uppercase;
+  white-space: nowrap;
+  
+transform: scaleY(1.15); /* ← estica verticalmente em 15% */
+
+}
+
+#topbar-phrase.show {
+  opacity: 1;
+}
+
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  white-space: nowrap;
+  padding: 10px;
+}
+
+.topbar-left {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  display: flex;
+  align-items: center; /* garante alinhamento vertical */
+  height: 100%;
+}
+
+.topbar-link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+}
+
+/* Ícones da topbar (menores que os do header) */
+.header-topbar .material-symbols-outlined {
+  font-size: 20px;
+  color: #fff;
+  vertical-align: middle;
+  transition: color 0.3s ease;
+}
+
+
+/* Aplica hover azul nos textos e links da topbar (menos redes sociais) */
+.header-topbar .material-symbols-outlined a:hover,
+.header-topbar .material-symbols-outlined .topbar-link:hover {
+  color: #00B3F5;
+}
+
+
+.topbar-social {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Link com fundo, arredondado, cor do ícone branca */
+.social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #fff !important; /* força ícone branco */
+  font-size: 18px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Fundo com cor da rede */
+.social-icon.instagram {
+  background: radial-gradient(circle at 30% 30%, #feda75, #d62976, #962fbf, #4f5bd5);
+}
+
+.social-icon.youtube {
+  background-color: #ff0000;
+}
+
+/* Efeito hover */
+.social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .header-topbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 20px;
+    align-items: stretch;
+  }
+
+  .topbar-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .topbar-left,
+  .topbar-right {
+    width: 100%;
+    justify-content: center;
+    margin: 6px 0;
+  }
+
+  .topbar-social {
+    justify-content: flex-end;
+  }
+}
+
+
